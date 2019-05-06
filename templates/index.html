@@ -1,12 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
+  <!-- <link href="{{ url_for('static', filename='fonts/icomoon/style.css') }}" rel="stylesheet" type="text/css"> -->
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet" type="text/css">  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css" type="text/css">
+  <link href="{{ url_for('static', filename='fonts/flaticon/font/flaticon.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/aos.css') }}" rel="stylesheet" type="text/css">
+  <link  rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+
+  <style>
+  .testimonials-img {
+  display: inline-block !important;}
+
+
+  </style>
 </head>
-<body>
-  <p>Hello World This is a Test</p>
-</body>
-</html>
+</head>
+
+<body style="background-image: url('');">
+ 
+  <div class="site-wrap">
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!--.site-mobile-menu-->
+    
+    
+    <div class="site-navbar-wrap js-site-navbar bg-white">
+      
+      <div class="container">
+        <div class="site-navbar bg-light">
+          <div class="row align-items-center">
+            <div class="col-2">
+              <h2 class="mb-0 site-logo"><a href="/" class="font-weight-bold">MARS</a></h2>
+            </div>
+            <div class="col-10">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    
+                      <li><a class="btn btn-primary btn-lg" href="/scrape" role="button">Refresh Data</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="slide-one-item home-slider owl-carousel">
+      
+      <!-- <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6" data-aos="fade">
+              <h1 class="font-secondary font-weight-bold text-uppercase">Small Business Insurance Agency</h1>
+              <span class="caption d-block text-white">An Insurance Company</span>
+            </div>
+          </div>
+        </div>
+      </div>   -->
+      <div class="site-blocks-cover inner-page overlay" style="background-image:  url( {{all_data.featured_image_url}});" data-aos="fade" data-stellar-background-ratio="0.5">
+
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-7 text-center" data-aos="fade">
+                <h1 class="font-secondary font-weight-bold text-uppercase">Mission to Mars</h1>
+                <span class="caption d-block text-white">Last Update: {{all_data.current}}</span>
+                <a class="btn btn-primary btn-lg" href="/scrape" role="button">Get The Latest Data</a>
+              </div>
+            </div>
+          </div>
+        </div> 
+      <div class="site-blocks-cover inner-page overlay" style="background-image:  url({{ url_for('static', filename='images/hero_bg_4.jpg') }});" data-aos="fade" data-stellar-background-ratio="0.5">
+
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h1 class="font-secondary font-weight-bold text-uppercase">Mission to Mars</h1>
+              <span class="caption d-block text-white">{{all_data.current}}</span>
+              <a class="btn btn-primary btn-lg" href="/scrape" role="button">Get The Latest Data</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+     
+      <div class="site-blocks-cover inner-page overlay" style="background-image: url({{ url_for('static', filename='images/hero_bg_5.jpg') }});" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+              <div class="col-md-7 text-center" data-aos="fade">
+                  <h1 class="font-secondary font-weight-bold text-uppercase">Mission to Mars</h1>
+                  <span class="caption d-block text-white">{{all_data.current}}</span>
+                  <a class="btn btn-primary btn-lg" href="/scrape" role="button">Get The Latest Data</a>
+                </div>
+          </div>
+        </div>
+      </div> 
+      <div class="site-blocks-cover inner-page overlay" style="background-image: url({{ url_for('static', filename='images/hero_bg_6.jpg') }});" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+              <div class="col-md-7 text-center" data-aos="fade">
+                  <h1 class="font-secondary font-weight-bold text-uppercase">Mission to Mars</h1>
+                  <span class="caption d-block text-white">{{all_data.current}}</span>
+                  <a class="btn btn-primary btn-lg" href="/scrape" role="button">Get The Latest Data</a>
+                </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    
