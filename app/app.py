@@ -5,7 +5,7 @@ import scrape_mars
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://<dbuser>:<dbpassword>@ds145146.mlab.com:45146/heroku_81hbmzd3"
+app.config["MONGO_URI"] = "mongodb://heroku_81hbmzd3:d0iriero1tpa7uv2bc159sgp06@ds145146.mlab.com:45146/heroku_81hbmzd3"
 mongo = PyMongo(app)
 
 
