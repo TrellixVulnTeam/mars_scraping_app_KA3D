@@ -10,19 +10,31 @@ mongo = PyMongo(app)
 
 
 
+# @app.route("/")
+# def index():
+#     all_data = mongo.db.all_data.find_one()
+#     return render_template("index.html", all_data=all_data)
+
+
+# @app.route("/scrape")
+# def scraper():
+#     all_data = mongo.db.all_data
+#     all_data_data = scrape_mars.scrape()
+#     all_data.update({}, all_data_data, upsert=True)
+#     return redirect("/", code=302)
+
 @app.route("/")
 def index():
-    all_data = mongo.db.all_data.find_one()
-    return render_template("index.html", all_data=all_data)
-
-
-@app.route("/scrape")
-def scraper():
     all_data = mongo.db.all_data
     all_data_data = scrape_mars.scrape()
     all_data.update({}, all_data_data, upsert=True)
     return redirect("/", code=302)
 
+
+@app.route("/scrape")
+def scraper():
+    all_data = mongo.db.all_data.find_one()
+    return render_template("index.html", all_data=all_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
