@@ -2,6 +2,7 @@ beautifulsoup4==4.7.1
 bs4==0.0.1
 certifi==2019.3.9
 chardet==3.0.4
+chromedriver==2.24.1
 Click==7.0
 conda==4.3.16
 DateTime==4.3
