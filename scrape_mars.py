@@ -61,12 +61,10 @@ def scrape():
         except AttributeError as e:
             print(e)
             x += 1
-    browser.quit()  
+    # browser.quit()  
 
 
     ####SECTION TWO: SPLINTER#####
-
-    browser = init_browser()
 
     url_2 = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url_2)
@@ -85,7 +83,6 @@ def scrape():
             time.sleep(0.5)
             # browser.click_link_by_partial_href('.gov/jpeg/')
             url_img=browser.find_link_by_partial_href('.gov/jpeg/')
-            browser.visit(url_img)
             featured_image_url = browser.url
             browser.quit()
         else:
