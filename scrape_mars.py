@@ -51,9 +51,9 @@ def scrape():
             body = result.find('div', class_="article_teaser_body").text
 
             if (title and body):
-                print(f'ARTICLE {x} ------------')
-                print(title)
-                print(body)
+                # print(f'ARTICLE {x} ------------')
+                # print(title)
+                # print(body)
                 all_data['title'] = title
                 all_data['body'] = body
                 x += 1
@@ -61,6 +61,7 @@ def scrape():
         except AttributeError as e:
             print(e)
             x += 1
+    print('Section 1 Complete')
     # browser.quit()  
 
 
@@ -91,6 +92,7 @@ def scrape():
 
 
     all_data['featured_image_url']=featured_image_url
+    print('Section 2 Complete')
 
 
     ##SECTION 3 Mars Weather###
@@ -138,6 +140,7 @@ def scrape():
 
     all_data['mars_weather']=mars_weather
     
+    print('Section 3 Complete')
 
     ##SECTION 4 FACTS###
 
@@ -165,6 +168,7 @@ def scrape():
 
     
     all_data['html_table']=html_table
+    print('Section 4 Complete')
 
     ###SECTION 5 MARS HEMISPHERES ####
     browser = init_browser()
@@ -203,12 +207,14 @@ def scrape():
         browser.quit()
 
     all_data['hemis_dicts_all']= hemis_dicts_all
+    print('Section 5 Complete')
 
     #Create references for table icons
 
     table_icons=["icons/orbit.png","icons/earth.png","icons/mass.png", "icons/moon.png", "icons/solar-system.png", "icons/jupiter-with-satellite.png","icons/celsius.png","icons/clipboard.png", "icons/telescope.png"]
 
     all_data['table_icons']= table_icons
+    print('All sections complete')
 
 
 
