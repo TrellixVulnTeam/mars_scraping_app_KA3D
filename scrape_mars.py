@@ -65,6 +65,7 @@ def scrape():
 
 
     ####SECTION TWO: SPLINTER#####
+    browser = init_browser()
 
     url_2 = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url_2)
