@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import re
 import datetime
+import time
 
 
 def init_browser():
@@ -76,12 +77,12 @@ def scrape():
     browser.find_by_id('full_image').first.click()
     lightbox = soup.find_all('a', class_='button')
 
-    links = []
     for item in lightbox:
         url_item = item.get('data-link')
         if url_item != None:
             url_3 = 'https://www.jpl.nasa.gov' + url_item
             browser.visit(url_3)
+            time.sleep(1)
             browser.click_link_by_partial_href('.gov/jpeg/')
             featured_image_url = browser.url
             browser.quit()
