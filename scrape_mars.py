@@ -82,7 +82,7 @@ def scrape():
         if url_item != None:
             url_3 = 'https://www.jpl.nasa.gov' + url_item
             browser.visit(url_3)
-            time.sleep(0.5)
+            # time.sleep(0.5)
             # browser.click_link_by_partial_href('.gov/jpeg/')
             url_img=browser.find_link_by_partial_href('.gov/jpeg/')
             featured_image_url = browser.url
@@ -136,7 +136,7 @@ def scrape():
         # all_data['mars_weather_link']=mars_weather_link
     else: 
         mars_weather=mars_weather
-    browser.quit()
+    # browser.quit()
 
     all_data['mars_weather']=mars_weather
     
