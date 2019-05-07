@@ -185,13 +185,13 @@ def scrape():
     for item in hemi_list:
         if item.text != '':
                 hemi_collection.append(item)
-    browser.quit()
+    # browser.quit()
 
-    browser = init_browser()
+    # browser = init_browser()
     hemis_dicts_all = []
 
     for item in hemi_collection:
-        browser = init_browser()
+        # browser = init_browser()
         link = 'https://astrogeology.usgs.gov' + item.get('href')
         browser.visit(link)
         html = browser.html
@@ -204,7 +204,7 @@ def scrape():
         hemi_dict = {"title": hemi_title, "img_url": img_link, "body": hemi_body}
         hemis_dicts_all.append(hemi_dict)
         x += 1
-        browser.quit()
+        # browser.quit()
 
     all_data['hemis_dicts_all']= hemis_dicts_all
     print('Section 5 Complete')
