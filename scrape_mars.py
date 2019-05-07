@@ -82,7 +82,7 @@ def scrape():
         if url_item != None:
             url_3 = 'https://www.jpl.nasa.gov' + url_item
             browser.visit(url_3)
-            time.sleep(1)
+            time.sleep(0.5)
             browser.click_link_by_partial_href('.gov/jpeg/')
             featured_image_url = browser.url
             browser.quit()
