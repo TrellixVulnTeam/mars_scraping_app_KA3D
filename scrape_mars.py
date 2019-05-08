@@ -36,19 +36,25 @@ def scrape():
 
     soup = BeautifulSoup(browser.html, 'html.parser')
     mars_content = soup.find_all('li', class_="slide")
-
+    
+    mars_news_dict={}
+    mars_news=[]
 
     for result in mars_content:
+    
         try:
             title = result.find('div', class_="content_title").text
             body = result.find('div', class_="article_teaser_body").text
            
             if (title and body):
-                all_data['title'] = title
-                all_data['body'] = body
-
+                mars_news_dict={"title": title, "body": body}
+                mars_news.append(mars_news_dict)
+            else:
+                continue
         except AttributeError as error:
             print(error)
+
+    all_data['mars_news']=mars_news
     print('Section 1 Complete')
 
 
