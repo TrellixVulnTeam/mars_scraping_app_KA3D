@@ -12,7 +12,12 @@ import pandas as pd
 import re
 import datetime
 import time
+import os
+import psycopg2
 
+DATABASE_URL = os.environ['DATABASE_URL']
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 def init_browser():
     # @NOTE: Replace the path with your actual path to the chromedriver
