@@ -127,13 +127,13 @@ def scrape():
     url = 'https://twitter.com/marswxreport?lang=en'
     tweets = []
 
-    browser = webdriver.Chrome()
-    browser.get(url)
+    # browser = webdriver.Chrome()
+    browser.visit(url)
 
-    html_source = browser.page_source
+    # html_source = browser.page_source
     # browser.quit()
 
-    soup = BeautifulSoup(html_source, 'html.parser')
+    soup = BeautifulSoup(browser.html, 'html.parser')
     mars_tweet = ''
     mars_tweets = soup.find_all('div', class_="js-tweet-text-container")
 
