@@ -38,7 +38,6 @@ def scrape():
     mars_content = soup.find_all('li', class_="slide")
 
 
-    # x = 1
     for result in mars_content:
         try:
             title = result.find('div', class_="content_title").text
@@ -47,11 +46,9 @@ def scrape():
             if (title and body):
                 all_data['title'] = title
                 all_data['body'] = body
-                # x += 1
 
         except AttributeError as error:
             print(error)
-            # x += 1
     print('Section 1 Complete')
 
 
@@ -93,7 +90,6 @@ def scrape():
     mars_weather = latest_tweet.replace('\n', ' ')
     if 'pic.twitter' in mars_weather:
         mars_weather_text = mars_weather.partition("pic.twitter")[0]
-        # mars_weather_popup_link = "pic.twitter" + mars_weather.partition("pic.twitter")[2]
       
         soup = BeautifulSoup(browser.html, 'html.parser')
         mars_tweet_popup_link = soup.find('img', attrs={'src': re.compile("^https://pbs.twimg.com/media/+")})
@@ -175,7 +171,7 @@ def scrape():
     table_icons=["icons/orbit.png","icons/earth.png","icons/mass.png", "icons/moon.png", "icons/solar-system.png", "icons/jupiter-with-satellite.png","icons/celsius.png","icons/clipboard.png", "icons/telescope.png"]
 
     all_data['table_icons']= table_icons
-    print('All sections complete yay')
+    print('All sections complete')
 
     browser.quit()
 
