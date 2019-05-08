@@ -74,9 +74,26 @@ def scrape():
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
-    browser.find_by_id('full_image').first.click()
-    lightbox = soup.find_all('a', class_='button')
+    # browser.find_by_id('full_image').first.click()
+    # lightbox = soup.find_all('a', class_='button')
 
+    # for item in lightbox:
+    #     url_item = item.get('data-link')
+    #     if url_item != None:
+    #         url_3 = 'https://www.jpl.nasa.gov' + url_item
+    #         browser.visit(url_3)
+    #         # time.sleep(0.5)
+    #         # browser.click_link_by_partial_href('.gov/jpeg/')
+    #         url_img=browser.find_link_by_partial_href('.gov/jpeg/')
+    #         featured_image_url = browser.url
+    #         browser.quit()
+    #     else:
+    #         continue
+
+    browser.find_by_id('full_image').first.click()
+    time.sleep(1)
+    lightbox = soup.find_all('a', class_='button')
+    print(lightbox)
     for item in lightbox:
         url_item = item.get('data-link')
         if url_item != None:
@@ -84,9 +101,11 @@ def scrape():
             browser.visit(url_3)
             # time.sleep(0.5)
             # browser.click_link_by_partial_href('.gov/jpeg/')
-            url_img=browser.find_link_by_partial_href('.gov/jpeg/')
+            url_img_new=soup.find_all('a', class_='main_image')
+            # url_img=browser.find_link_by_partial_href('.gov/jpeg/')
+            browser.visit(url_img_new)
             featured_image_url = browser.url
-            browser.quit()
+            # browser.quit()
         else:
             continue
 
