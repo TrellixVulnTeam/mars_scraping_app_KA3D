@@ -66,7 +66,7 @@ def scrape():
 
 
     ####SECTION TWO: SPLINTER#####
-    browser = init_browser()
+    # browser = init_browser()
 
     url_2 = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url_2)
@@ -169,7 +169,7 @@ def scrape():
     print('Section 3 Complete')
 
     ##SECTION 4 FACTS###
-    browser = init_browser()
+    # browser = init_browser()
 
     url_4 = 'https://space-facts.com/mars/'
 
@@ -198,7 +198,7 @@ def scrape():
     print('Section 4 Complete')
 
     ###SECTION 5 MARS HEMISPHERES ####
-    browser = init_browser()
+    # browser = init_browser()
 
     url_5 = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
 
