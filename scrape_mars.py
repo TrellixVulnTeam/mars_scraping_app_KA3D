@@ -89,21 +89,15 @@ def scrape():
     #         browser.quit()
     #     else:
     #         continue
-    for item in lightbox: 
-        print(item)
-    for item in lightbox:
-        url_item = item.get('data-link')
-        if url_item != None:
-            url_3 = 'https://www.jpl.nasa.gov' + url_item
-            browser.visit(url_3)
-            # time.sleep(0.5)
-            # browser.click_link_by_partial_href('.gov/jpeg/')
-            url_img=browser.find_link_by_partial_href('.gov/jpeg/')
-            featured_image_url = browser.url
-            browser.quit()
-        else:
-            continue
-   
+
+    item=lightbox[0]
+    url_item=item.get('data-link')
+    url_3 = 'https://www.jpl.nasa.gov' + url_item
+    browser.visit(url_3)
+    url_img=browser.find_link_by_partial_href('.gov/jpeg/')
+    browser.visit(url_img)
+    featured_image_url = browser.url
+
 
 
     all_data['featured_image_url']=featured_image_url
