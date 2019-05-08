@@ -34,7 +34,7 @@ def scrape():
 
     url = 'https://mars.nasa.gov/news'
 
-    browser = webdriver.Chrome()
+    # browser = webdriver.Chrome()
     browser.get(url)
 
     html_source = browser.page_source
