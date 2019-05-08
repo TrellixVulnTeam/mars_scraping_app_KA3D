@@ -1,14 +1,18 @@
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import scrape_mars
+import os
+import psycopg2
 
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://heroku_81hbmzd3:d0iriero1tpa7uv2bc159sgp06@ds145146.mlab.com:45146/heroku_81hbmzd3"
+app.config["MONGO_URI"] = os.environ['MONGODB_URI']
 mongo = PyMongo(app)
 
+DATABASE_URL = os.environ['DATABASE_URL']
 
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 @app.route("/")
 def index():

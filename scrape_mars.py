@@ -243,6 +243,6 @@ def scrape():
     all_data['table_icons']= table_icons
     print('All sections complete yay')
 
-
+    browser.quit()
 
     return all_data
