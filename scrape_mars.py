@@ -151,7 +151,7 @@ def scrape():
         mars_weather_text = mars_weather.partition("pic.twitter")[0]
         mars_weather_popup_link = "pic.twitter" + mars_weather.partition("pic.twitter")[2]
       
-        soup = BeautifulSoup(html_source, 'html.parser')
+        soup = BeautifulSoup(browser.html, 'html.parser')
         mars_tweet_popup_link = soup.find('img', attrs={'src': re.compile("^https://pbs.twimg.com/media/+")})
         mars_tweet_popup_link=mars_tweet_popup_link["src"]
         # mars_weather_link=(mars_tweet_popup["data-image-url"].text)
