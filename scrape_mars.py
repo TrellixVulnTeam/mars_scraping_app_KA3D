@@ -42,7 +42,7 @@ def scrape():
         try:
             title = result.find('div', class_="content_title").text
             body = result.find('div', class_="article_teaser_body").text
-
+           
             if (title and body):
                 all_data['title'] = title
                 all_data['body'] = body
