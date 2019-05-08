@@ -38,7 +38,7 @@ def scrape():
     browser.get(url)
 
     html_source = browser.page_source
-    browser.quit()
+    # browser.quit()
 
     soup = BeautifulSoup(html_source, 'html.parser')
     mars_content = soup.find_all('li', class_="slide")
@@ -80,7 +80,10 @@ def scrape():
   
 
 
+    # browser = init_browser()
 
+    # url_2 = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
+    # browser.visit(url_2)
     # html = browser.html
     # soup = BeautifulSoup(html, 'html.parser')
 
