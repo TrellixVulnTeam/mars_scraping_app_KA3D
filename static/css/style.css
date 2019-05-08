@@ -25,7 +25,11 @@ h1, h2, h3, h4, h5,
 
 .testimonials-img {
   display: inline-block !important;}
-  
+.dark-link {
+color: #000;
+-webkit-transition: none;
+transition: none;
+}
 
 a {
   -webkit-transition: .3s all ease;
