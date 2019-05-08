@@ -162,7 +162,7 @@ def scrape():
         # all_data['mars_weather_link']=mars_weather_link
     else: 
         mars_weather=mars_weather
-    browser.quit()
+    # browser.quit()
     
     all_data['mars_weather']=mars_weather
     
