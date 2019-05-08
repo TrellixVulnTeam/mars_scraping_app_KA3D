@@ -35,12 +35,12 @@ def scrape():
     url = 'https://mars.nasa.gov/news'
 
     # browser = webdriver.Chrome()
-    browser.get(url)
+    browser.visit(url)
 
-    html_source = browser.page_source
+    # html_source = browser.page_source
     # browser.quit()
 
-    soup = BeautifulSoup(html_source, 'html.parser')
+    soup = BeautifulSoup(browser.html, 'html.parser')
     mars_content = soup.find_all('li', class_="slide")
 
 
