@@ -74,8 +74,18 @@ def scrape():
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
-    browser.find_by_id('full_image').first.click()
-    lightbox = soup.find_all('a', class_='button')
+    url_img=browser.find_by_id('full_image')
+    featured_image_url= 'https://www.jpl.nasa.gov' + url_img['data-fancybox-href']
+
+  
+
+
+
+    # html = browser.html
+    # soup = BeautifulSoup(html, 'html.parser')
+
+    # browser.find_by_id('full_image').first.click()
+    # lightbox = soup.find_all('a', class_='button')
 
     # for item in lightbox:
     #     url_item = item.get('data-link')
@@ -90,13 +100,17 @@ def scrape():
     #     else:
     #         continue
 
-    item=lightbox[0]
-    url_item=item.get('data-link')
-    url_3 = 'https://www.jpl.nasa.gov' + url_item
-    browser.visit(url_3)
-    url_img=browser.find_link_by_partial_href('.gov/jpeg/')
-    browser.visit(url_img)
-    featured_image_url = browser.url
+
+    ##### DOESN't WORK#####
+    # item=lightbox[0]
+    # url_item=item.get('data-link')
+    # url_3 = 'https://www.jpl.nasa.gov' + url_item
+    # browser.visit(url_3)
+    # url_img=browser.find_link_by_partial_href('.gov/jpeg/')
+    # browser.visit(url_img)
+    # featured_image_url = browser.url
+        ##### DOESN't WORK#####
+
 
 
 
