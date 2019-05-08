@@ -241,7 +241,7 @@ def scrape():
     table_icons=["icons/orbit.png","icons/earth.png","icons/mass.png", "icons/moon.png", "icons/solar-system.png", "icons/jupiter-with-satellite.png","icons/celsius.png","icons/clipboard.png", "icons/telescope.png"]
 
     all_data['table_icons']= table_icons
-    print('All sections complete')
+    print('All sections complete yay')
 
 
 
