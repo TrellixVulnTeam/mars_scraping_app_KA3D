@@ -162,13 +162,14 @@ def scrape():
         # all_data['mars_weather_link']=mars_weather_link
     else: 
         mars_weather=mars_weather
-    # browser.quit()
-
+    browser.quit()
+    
     all_data['mars_weather']=mars_weather
     
     print('Section 3 Complete')
 
     ##SECTION 4 FACTS###
+    browser = init_browser()
 
     url_4 = 'https://space-facts.com/mars/'
 
